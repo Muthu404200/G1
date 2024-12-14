@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImg from "../../../assets/images/hero.png";
+import HeroImg from "../../../assets/illustrations/college project-cuate.svg";
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { SlideRight } from "../../../utility/animation";

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { SlideLeft } from "../../../utility/animation";
+import AboutImg from "../../../assets/illustrations/Education-cuate.svg"
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-            src="https://i.imgur.com/WbQnbas.png"
+            src={AboutImg}
             alt=""
             className="w-[350px] md:w-[550px] xl:w-[700px]"
           />

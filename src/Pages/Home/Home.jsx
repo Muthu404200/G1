@@ -3,8 +3,8 @@ import Hero from './Hero/Hero'
 import NumberCounter from './NumberCounter/NumberCounter'
 import WhyChooseUs from './WhyChooseUs/WhyChooseUs'
 import Banner from './Banner/Banner'
-import Img1 from "../../assets/illustrations/t1.svg";
-import Img2 from "../../assets/illustrations/t2.svg";
+import Img1 from "../../assets/illustrations/Online learning-cuate.svg";
+import Img2 from "../../assets/illustrations/Teacher student-cuate.svg";
 import SubjectCard from "./SubjectCard/SubjectCard"
 
 

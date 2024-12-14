@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <ul className="flex items-center gap-6">
               {[
-                { id: 1, title: "Home", link: "/" },
+                { id: 1, title: "Home", link: "/G1/" },
                 { id: 2, title: "About", link: "/about" },
                 { id: 3, title: "Courses", link: "/courses" },
                 { id: 4, title: "Gallery", link: "/gallery" },

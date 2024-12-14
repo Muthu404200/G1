@@ -5,42 +5,42 @@ import { FaComputer, FaBook } from "react-icons/fa6";
 const subjectList = [
   {
     id: 1,
-    name: "Engineering",
+    name: "Software",
     icon: <FaComputer />,
     color: "#0063ff",
     delay: 0.2,
   },
   {
     id: 2,
-    name: "English",
+    name: "Accounting",
     icon: <FaBook />,
     color: "#00c986",
     delay: 0.3,
   },
   {
     id: 3,
-    name: "Programming",
+    name: "Multimedia",
     icon: <FaComputer />,
     color: "#922aee",
     delay: 0.4,
   },
   {
     id: 4,
-    name: "Science",
+    name: "SAP",
     icon: <FaBook />,
     color: "#ea7516",
     delay: 0.5,
   },
   {
     id: 5,
-    name: "History",
+    name: "CAD-Courses",
     icon: <FaBook />,
     color: "#075267",
     delay: 0.6,
   },
   {
     id: 6,
-    name: "Psychology",
+    name: "MS office",
     icon: <FaBook />,
     color: "#986d1d",
     delay: 0.7,
@@ -67,12 +67,9 @@ const SubjectCard = () => {
       <div className="container py-14 md:py-24">
         {/* header section */}
         <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-5">
-          <h1 className="uppercase font-semibold text-orange-500">
-            Our tutor subjects
+          <h1 className="uppercase font-semibold text-secondary text-3xl">
+            Our Popular Courses
           </h1>
-          <p className="font-semibold text-3xl">
-            Find Online Tutor in Any Subject
-          </p>
         </div>
         {/* cards section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">

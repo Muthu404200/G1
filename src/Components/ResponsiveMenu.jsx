@@ -27,11 +27,11 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
             <ul className="flex flex-col justify-center items-center gap-10">
               <li>
                 <NavLink
-                  to="/"
+                  to="/G1/"
                   onClick={closeMenu} // Close the menu on click
                   className={({ isActive }) =>
                     `text-xl font-semibold transition-all duration-300 ${
-                      isActive ? "text-secondary" : "text-gray-600 hover:text-secondary"
+                      isActive ? "text-red-500" : "text-white hover:text-secondary"
                     }`
                   }
                 >
@@ -44,7 +44,7 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
                   onClick={closeMenu} // Close the menu on click
                   className={({ isActive }) =>
                     `text-xl font-semibold transition-all duration-300 ${
-                      isActive ? "text-secondary" : "text-gray-600 hover:text-secondary"
+                      isActive ? "text-red-500" : "text-white hover:text-secondary"
                     }`
                   }
                 >
@@ -53,24 +53,11 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
               </li>
               <li>
                 <NavLink
-                  to="/service"
-                  onClick={closeMenu} // Close the menu on click
-                  className={({ isActive }) =>
-                    `text-xl font-semibold transition-all duration-300 ${
-                      isActive ? "text-secondary" : "text-gray-600 hover:text-secondary"
-                    }`
-                  }
-                >
-                  Service
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/gallery"
                   onClick={closeMenu} // Close the menu on click
                   className={({ isActive }) =>
                     `text-xl font-semibold transition-all duration-300 ${
-                      isActive ? "text-secondary" : "text-gray-600 hover:text-secondary"
+                      isActive ? "text-red-500" : "text-white hover:text-secondary"
                     }`
                   }
                 >
@@ -83,7 +70,7 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
                   onClick={closeMenu} // Close the menu on click
                   className={({ isActive }) =>
                     `text-xl font-semibold transition-all duration-300 ${
-                      isActive ? "text-secondary" : "text-gray-600 hover:text-secondary"
+                      isActive ? "text-red-500" : "text-white hover:text-secondary"
                     }`
                   }
                 >
@@ -93,7 +80,7 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
             </ul>
 
             {/* Social Media Icons */}
-            <ul className="flex text-white gap-6 items-center cursor-pointer mt-10">
+            <ul className="flex text-white gap-6 items-center justify-center cursor-pointer mt-10">
               {iconList.map((item, index) => (
                 <motion.li
                   key={index}

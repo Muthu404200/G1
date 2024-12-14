@@ -19,7 +19,7 @@ const Banner = ({ image, title, subtitle, link, tag, reverse }) => {
               transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
               src={image}
               alt=""
-              className="w-[400px] h-full object-cover"
+              className="w-[500px] h-full object-cover"
             />
           </div>
           {/* Banner text section */}
@@ -54,7 +54,7 @@ const Banner = ({ image, title, subtitle, link, tag, reverse }) => {
               whileInView={"visible"}
               className="flex justify-center md:justify-start"
             >
-              <button className="primary-btn !mt-5">Get Started</button>
+              <button className="primary-btn !mt-5 text-white">Get Started</button>
             </motion.div>
           </div>
         </div>
