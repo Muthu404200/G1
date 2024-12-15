@@ -1,55 +1,76 @@
 import React from 'react'
-import image from '../../../assets/illustrations/t1.svg'
+import image from '../../../assets/illustrations/Certification-cuate.svg'
 import { SlideUp } from "../../../utility/animation";
 import { motion } from "framer-motion";
+import { FaWebAwesome } from "react-icons/fa6";
+import { SlideLeft } from "../../../utility/animation";
+
+const Whyus = [
+  {
+    id: 1,
+    desc: "All of our special education experts have a degree in special education.",
+    icon: <FaWebAwesome/>,
+    bgColor: "#357AFA",
+    delay: 0.3,
+  },
+  {
+    id: 2,
+    desc: "Our tutors are always available to respond as quick as possible for you",
+    icon: <FaWebAwesome/>,
+    bgColor: "#357AFA",
+    delay: 0.6,
+  },
+  {
+    id: 3,
+    desc: "Workshops are hands-on meetings as opposed to lectures",
+    icon: <FaWebAwesome/>,
+    bgColor: "#357AFA",
+    delay: 0.9,
+  },
+  {
+    id: 4,
+    desc: "Choose an expert tutor based on your budget and per hour.",
+    icon: <FaWebAwesome/>,
+    bgColor: "#357AFA",
+    delay: 0.9,
+  },
+];
+
 
 function Option({reverse}) {
   return (
     <>
-    <section className="text-gray-700 body-font">
-  <div className="flex justify-center mt-10 text-4xl font-regular">
-    Why Us?
-  </div>
-  <div className="container px-5 py-12 mx-auto">
-    <div className="flex flex-wrap text-center justify-center">
-      <div className="p-4 md:w-1/4 sm:w-1/2">
-        <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div className="flex justify-center">
-            <img src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp" className="w-32 mb-3" />
-          </div>
-          <h2 className="title-font font-regular text-2xl text-gray-900">All of our special education experts have a degree in special education.</h2>
+    <section className="bg-[#f9fafc]">
+      <div className="container py-24">
+        {/* header section */}
+        <div className="space-y-4 p-6 text-center max-w-[500px] mx-auto mb-5">
+          <h1 className="uppercase font-semibold text-orange-600">
+            Why Us
+          </h1>
+        </div>
+        {/* cards section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {Whyus.map((item) => {
+                      return (
+                        <motion.div
+                          variants={SlideLeft(item.delay)}
+                          initial="hidden"
+                          whileInView={"visible"}
+                          className="space-y-4 p-6 rounded-xl shadow-[0_0_22px_rgba(0,0,0,0.15)]"
+                        >
+                          {/* icon section */}
+                          <div
+                            style={{ backgroundColor: item.bgColor }}
+                            className="w-10 h-10 rounded-lg flex justify-center items-center text-white"
+                          >
+                            <div className="text-2xl text-center">{item.icon}</div>
+                          </div>
+                          <p className="font-semibold">{item.desc}</p>
+                        </motion.div>
+                      );
+              })}
         </div>
       </div>
-
-      <div className="p-4 md:w-1/4 sm:w-1/2">
-        <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div className="flex justify-center">
-            <img src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp" className="w-32 mb-3" />
-          </div>
-          <h2 className="title-font font-regular text-2xl text-gray-900">Our tutors are always available to respond as quick as possible for you</h2>
-        </div>
-      </div>
-
-      <div className="p-4 md:w-1/4 sm:w-1/2">
-        <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div className="flex justify-center">
-            <img src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp" className="w-32 mb-3" />
-          </div>
-          <h2 className="title-font font-regular text-2xl text-gray-900">Our digital whiteboard equipped with audio and video chat fetures.</h2>
-        </div>
-      </div>
-
-      <div className="p-4 md:w-1/4 sm:w-1/2">
-        <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div className="flex justify-center">
-            <img src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp" className="w-32 mb-3"/>
-          </div>
-          <h2 className="title-font font-regular text-2xl text-gray-900">Choose an expert tutor based on your budget and per hour.</h2>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
     <div className="bg-[#f9f9f9] pb-14 pt-14">
       <div className="container">
@@ -62,7 +83,7 @@ function Option({reverse}) {
               whileInView={"visible"}
               className="text-sm text-secondary font-semibold capitalize"
             >
-               Global Tech Computer Education Ambattur
+               Global Tech Computer Education Purasawalkam
             </motion.p>
             <motion.p
               variants={SlideUp(0.7)}
@@ -86,7 +107,7 @@ function Option({reverse}) {
               whileInView={"visible"}
               className="flex justify-center md:justify-start"
             >
-              <button className="primary-btn !mt-5">Get Started</button>
+              <button className="primary-btn !mt-5 text-white">Get Started</button>
             </motion.div>
           </div>
           {/* banner Image section */}

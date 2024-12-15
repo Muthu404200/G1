@@ -7,9 +7,9 @@ function About() {
   return (
     <>
     <Headers />
-    <Review />
-    {/* <Option /> */}
+    <Option />
     <NumberCounter />
+    <Review />
     </>
   )
 }
