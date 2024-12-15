@@ -66,6 +66,19 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
               </li>
               <li>
                 <NavLink
+                  to="/courses"
+                  onClick={closeMenu} // Close the menu on click
+                  className={({ isActive }) =>
+                    `text-xl font-semibold transition-all duration-300 ${
+                      isActive ? "text-red-500" : "text-white hover:text-secondary"
+                    }`
+                  }
+                >
+                  Courses
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/contact"
                   onClick={closeMenu} // Close the menu on click
                   className={({ isActive }) =>
@@ -94,6 +107,22 @@ const ResponsiveMenu = ({ isOpen, closeMenu }) => {
                 </motion.li>
               ))}
             </ul>
+
+            {/* Buttons */}
+            <div className="flex flex-col items-center gap-4 mt-10">
+              <button
+                onClick={closeMenu} // Close menu on button click
+                className="bg-secondary text-white font-semibold rounded-full py-2 px-6 hover:bg-red-600 transition-all duration-300"
+              >
+                Certificate Verification
+              </button>
+              <button
+                onClick={closeMenu} // Close menu on button click
+                className="bg-red-600 text-white font-semibold rounded-full py-2 px-6 hover:bg-secondary transition-all duration-300"
+              >
+                Register
+              </button>
+            </div>
           </div>
         </motion.div>
       )}

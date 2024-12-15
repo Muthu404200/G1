@@ -1,88 +1,142 @@
 import React from 'react'
+import { motion } from "framer-motion";
 
 function Form() {
   return (
-    <>
-<div class="max-w-screen-lg mx-auto p-5">
-  <div class="grid grid-cols-1 md:grid-cols-12 border">
-    
-    
-    <div class="md:col-span-4 p-10 ">
-      <p class="mt-4 text-sm leading-7 font-regular uppercase">Contact</p>
-      <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight">Get In <span class="text-secondary">Touch</span></h3>
-      <p class="mt-4 leading-7 ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="w-full max-w-4xl p-8 bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
+        <div className="grid sm:grid-cols-2 gap-16 items-center">
+          {/* Left Side: Contact Information */}
+          <div>
+            <h1 className="text-3xl font-extrabold">Let's Talk</h1>
+            <p className="text-sm text-gray-400 mt-3">
+              Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project and provide help.
+            </p>
 
-      <div class="flex items-center mt-5">
-        <svg class="h-6 mr-2 text-secondary" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489.536 489.536">
-          <path d="m488.554,476l-99-280.2c-1-4.2-5.2-7.3-9.4-7.3h-45.6c12.9-31.1 19.6-54.9 19.6-70.8 0-64.6-50-117.7-112.5-117.7-61.5,0-112.5,52.1-112.5,117.7 0,17.6 8.2,43.1 19.9,70.8h-39.7c-4.2,0-8.3,3.1-9.4,7.3l-99,280.2c-3.2,10.3 6.3,13.5 9.4,13.5h468.8c4.2,0.5 12.5-4.2 9.4-13.5zm-246.9-455.3c51,1.06581e-14 91.7,43.7 91.7,96.9 0,56.5-79.2,182.3-91.7,203.1-31.3-53.1-91.7-161.5-91.7-203.1 0-53.1 40.6-96.9 91.7-96.9zm-216.7,448l91.7-259.4h41.7c29.9,64.1 83.3,151 83.3,151s81.4-145.7 83.8-151h47.4l91.7,259.4h-439.6z"/>
-        </svg>
-        <span class="text-sm">14, Tana St, opp. AAVIN BOOTH, Purasaiwakkam, Chennai, Tamil Nadu 600007</span>
-      </div>
-      <div class="flex items-center mt-5">
-        <svg class="h-6 mr-2 text-secondary" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 60.002 60.002">
-          <path d="M59.002,37.992c-3.69,0-6.693-3.003-6.693-6.693c0-0.553-0.447-1-1-1s-1,0.447-1,1c0,4.794,3.899,8.693,8.693,8.693 c0.553,0,1-0.447,1-1S59.554,37.992,59.002,37.992z"/>
-        </svg>
-        <span class="text-sm">9889843343</span>
-      </div>
-      <div class="flex items-center mt-5">
-        <svg class="h-6 mr-2 text-secondary" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 300.988 300.988">
-          <path d="M150.494,0.001C67.511,0.001,0,67.512,0,150.495s67.511,150.493,150.494,150.493s150.494-67.511,150.494-150.493 S233.476,0.001,150.494,0.001z M150.494,285.987C75.782,285.987,15,225.206,15,150.495S75.782,15.001,150.494,15.001 s135.494,60.782,135.494,135.493S225.205,285.987,150.494,285.987z"/>
-          <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883"/>
-        </svg>
-        <span class="text-sm">24/7</span>
+            <div className="mt-12">
+              <h2 className="text-lg font-extrabold">Email</h2>
+              <ul className="mt-3">
+                <li className="flex items-center">
+                  <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="#007bff"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
+                      />
+                    </svg>
+                  </div>
+                  <span className="ml-3 text-sm text-gray-600">contact@yourdomain.com</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-12">
+              <h2 className="text-lg font-extrabold">Follow Us</h2>
+              <ul className="mt-3 flex space-x-4">
+                <li>
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#3b5998] h-10 w-10 rounded-full flex items-center justify-center text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h-2zm0 3h2v7h-2zm2-4h2V7h-2zm-3 1h1v2H9zm1 3h1V9h-1zm3-1h1v2h1z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#C13584] h-10 w-10 rounded-full flex items-center justify-center text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2.16c3.186 0 3.566.012 4.819.07 1.219.057 1.839.26 2.27.433.426.174.733.388 1.05.703.317.315.529.624.703 1.051.174.431.376 1.051.433 2.27.057 1.253.07 1.633.07 4.819 0 3.186-.012 3.566-.07 4.819-.057 1.219-.26 1.839-.433 2.27-.174.426-.388.733-.703 1.051-.315.317-.624.529-1.051.703-.431.174-.731.376-2.27.433-1.253.057-1.633.07-4.819 0-3.186-.012-3.566-.07-4.819-.07-1.219 0-1.839.26-2.27.433-.426.174-.733.388-1.05.703-.317.315-.529.624-.703 1.051-.174.431-.376 1.051-.433 2.27-.057 1.253-.07 1.633-.07 4.819 0 3.186.012 3.566.07 4.819.057 1.219.26 1.839.433 2.27.174.426.388.733.703 1.051.315.317.624.529 1.051.703.431.174.731.376 2.27.433 1.253.057 1.633.07 4.819 0zm0 4.464c-1.948 0-3.528 1.58-3.528 3.528 0 1.949 1.58 3.528 3.528 3.528 1.948 0 3.528-1.579 3.528-3.528 0-1.948-1.58-3.528-3.528-3.528zm0 5.808c-1.26 0-2.28-1.02-2.28-2.28 0-1.26 1.02-2.28 2.28-2.28 1.26 0 2.28 1.02 2.28 2.28 0 1.26-1.02 2.28-2.28 2.28zm6.669-6.799c-.732 0-1.255-.522-1.255-1.255 0-.733.523-1.255 1.255-1.255.733 0 1.255.523 1.255 1.255 0 .733-.522 1.255-1.255 1.255z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#FF0000] h-10 w-10 rounded-full flex items-center justify-center text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M10.3 16.4L15.7 12l-5.4-4.4v8.8zm1.3-9.8l6.7 5.3c1 1 1 2.6 0 3.6l-6.7 5.3c-.7.6-1.7.6-2.4 0L3.3 13c-1-1-1-2.6 0-3.6l6.7-5.3c.7-.6 1.7-.6 2.4 0z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right Side: Contact Form */}
+          <div>
+            <form className="space-y-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows="6"
+                className="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"
+              ></textarea>
+              <button
+                type="button"
+                className="text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-
-    <form class="md:col-span-8 p-10" action="your-server-endpoint" method="POST">
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="first-name">
-            First Name
-          </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="first-name" name="first-name" type="text" placeholder="Jane" required />
-        </div>
-        <div class="w-full md:w-1/2 px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="last-name">
-            Last Name
-          </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="last-name" name="last-name" type="text" placeholder="Doe" />
-        </div>
-      </div>
-
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
-            Email Address
-          </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email" placeholder="********@*****.**" required />
-        </div>
-      </div>
-
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
-            Your Message
-          </label>
-          <textarea rows="10" id="message" name="message" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Your message here..." required></textarea>
-        </div>
-        <div class="flex justify-between w-full px-3">
-          <div class="md:flex md:items-center">
-            <label class="block text-gray-500 font-bold">
-              <input class="mr-2 leading-tight" type="checkbox" name="newsletter" />
-              <span class="text-sm">Send me your newsletter!</span>
-            </label>
-          </div>
-          <button class="shadow bg-secondary hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
-            Send Message
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-    </>
-  )
+  );
 }
 
-export default Form
+export default Form;

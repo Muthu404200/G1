@@ -25,8 +25,8 @@ const WhyChooseData = [
   },
   {
     id: 3,
-    title: "Workshops",
-    desc: "Workshops are hands-on meetings as opposed to lectures",
+    title: "Interactive Whiteboard",
+    desc: "Our digital whiteboard equipped with audio and video chat fetures.",
     link: "/",
     icon: <GiGymBag />,
     bgColor: "#fa6400",

@@ -38,15 +38,24 @@ const Popup = () => {
             </button>
             {/* Content */}
             <h2 className="text-xl font-bold mb-4 text-center">
-              Welcome to Our Website!
+              25-50% Discount on Our Courses!
             </h2>
-            <p className="text-gray-700 text-center">
-              Explore and enjoy our amazing features and services.
+            <p className="text-gray-700 text-center mb-6">
+              Don't miss out on this limited-time offer! Register now and enjoy
+              amazing discounts on our courses.
             </p>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 flex justify-center gap-4">
+              {/* Register Button */}
               <button
                 onClick={closePopup}
-                className="bg-secondary text-white px-4 py-2 rounded hover:bg-secondary-dark transition-all"
+                className="bg-secondary text-white px-6 py-2 rounded hover:bg-secondary-dark transition-all"
+              >
+                Register Now
+              </button>
+              {/* Close Button */}
+              <button
+                onClick={closePopup}
+                className="bg-gray-300 text-gray-700 px-6 py-2 rounded hover:bg-gray-400 transition-all"
               >
                 Close
               </button>

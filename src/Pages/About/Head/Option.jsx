@@ -40,38 +40,6 @@ const Whyus = [
 function Option({reverse}) {
   return (
     <>
-    <section className="bg-[#f9fafc]">
-      <div className="container py-24">
-        {/* header section */}
-        <div className="space-y-4 p-6 text-center max-w-[500px] mx-auto mb-5">
-          <h1 className="uppercase font-semibold text-orange-600">
-            Why Us
-          </h1>
-        </div>
-        {/* cards section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {Whyus.map((item) => {
-                      return (
-                        <motion.div
-                          variants={SlideLeft(item.delay)}
-                          initial="hidden"
-                          whileInView={"visible"}
-                          className="space-y-4 p-6 rounded-xl shadow-[0_0_22px_rgba(0,0,0,0.15)]"
-                        >
-                          {/* icon section */}
-                          <div
-                            style={{ backgroundColor: item.bgColor }}
-                            className="w-10 h-10 rounded-lg flex justify-center items-center text-white"
-                          >
-                            <div className="text-2xl text-center">{item.icon}</div>
-                          </div>
-                          <p className="font-semibold">{item.desc}</p>
-                        </motion.div>
-                      );
-              })}
-        </div>
-      </div>
-</section>
     <div className="bg-[#f9f9f9] pb-14 pt-14">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0">
@@ -129,6 +97,41 @@ function Option({reverse}) {
         </div>
       </div>
     </div>
+  
+
+    <section className="bg-[#f9fafc]">
+      <div className="container py-24">
+        {/* header section */}
+        <div className="space-y-4 p-6 text-center max-w-[500px] mx-auto mb-5">
+          <h1 className="uppercase font-semibold text-orange-600">
+            Why Us
+          </h1>
+        </div>
+        {/* cards section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {Whyus.map((item) => {
+                      return (
+                        <motion.div
+                          variants={SlideLeft(item.delay)}
+                          initial="hidden"
+                          whileInView={"visible"}
+                          className="space-y-4 p-6 rounded-xl shadow-[0_0_22px_rgba(0,0,0,0.15)]"
+                        >
+                          {/* icon section */}
+                          <div
+                            style={{ backgroundColor: item.bgColor }}
+                            className="w-10 h-10 rounded-lg flex justify-center items-center text-white"
+                          >
+                            <div className="text-2xl text-center">{item.icon}</div>
+                          </div>
+                          <p className="font-semibold">{item.desc}</p>
+                        </motion.div>
+                      );
+              })}
+        </div>
+      </div>
+</section>
+    
     </>
   )
 }
