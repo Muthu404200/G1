@@ -6,72 +6,43 @@ const courses = [
     id: 1,
     title: "Microsoft Office",
     description: "Learn MS Word, Excel, PowerPoint, and Outlook.",
-    topics: {
-      basic: ["Introduction to Office Suite", "MS Word Basics", "Excel Basics"],
-      intermediate: ["Advanced Excel Formulas", "PowerPoint Designs"],
-      advanced: ["Macros & VBA in Excel", "Outlook Automation"],
-    },
     image: "https://via.placeholder.com/300x150",
   },
   {
     id: 2,
     title: "Tally",
     description: "Master accounting with Tally ERP.",
-    topics: {
-      basic: ["Tally Basics", "Creating Ledgers & Vouchers"],
-      intermediate: ["GST Calculations", "Inventory Management"],
-      advanced: ["Payroll Accounting", "Tally Advanced Features"],
-    },
     image: "https://via.placeholder.com/300x150",
   },
   {
     id: 3,
     title: "Web Design",
     description: "Learn HTML, CSS, and UI/UX fundamentals.",
-    topics: {
-      basic: ["HTML Basics", "CSS Styling", "Responsive Design"],
-      intermediate: ["CSS Frameworks (Tailwind, Bootstrap)", "Figma Design"],
-      advanced: ["Animation", "Design Systems & UX Principles"],
-    },
     image: "https://via.placeholder.com/300x150",
   },
   {
     id: 4,
     title: "Web Development (MERN / Spring Boot)",
     description: "Full-stack development using modern frameworks.",
-    topics: {
-      basic: ["React Basics", "Express Setup", "Spring Boot Intro"],
-      intermediate: ["REST APIs", "MongoDB & MySQL Integration"],
-      advanced: ["Authentication & Deployment", "State Management (Redux)"],
-    },
     image: "https://via.placeholder.com/300x150",
   },
   {
     id: 5,
     title: "Data Science",
     description: "Data processing, visualization, and ML techniques.",
-    topics: {
-      basic: ["Python Basics", "Data Visualization with Matplotlib"],
-      intermediate: ["Pandas & NumPy", "Statistical Analysis"],
-      advanced: ["Machine Learning Models", "Deep Learning Basics"],
-    },
     image: "https://via.placeholder.com/300x150",
   },
   {
     id: 6,
     title: "Programming Languages (C, C++, Java, Python)",
     description: "Learn popular programming languages.",
-    topics: {
-      basic: ["Syntax & Basics", "Control Structures"],
-      intermediate: ["OOP Concepts", "Data Structures"],
-      advanced: ["Advanced Algorithms", "Multithreading"],
-    },
     image: "https://via.placeholder.com/300x150",
   },
 ];
 
 function Courses() {
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const [filter, setFilter] = useState(""); // State for title-based filter
 
   const handlePopup = (course) => {
     setSelectedCourse(course);
@@ -81,15 +52,37 @@ function Courses() {
     setSelectedCourse(null);
   };
 
+  // Filter courses based on the title
+  const filteredCourses = courses.filter((course) =>
+    course.title.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <div className="bg-gray-50 min-h-screen p-6">
       <h1 className="text-center text-3xl font-bold text-gray-800 mb-8">
         Our Courses
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {courses.map((course) => (
+
+      {/* Filter Input */}
+      <div className="flex justify-center mb-6">
+        <input
+          type="text"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          placeholder="Search by title..."
+          className="px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full max-w-md"
+        />
+      </div>
+
+      {/* Course List */}
+      <motion.div
+        layout
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {filteredCourses.map((course) => (
           <motion.div
             key={course.id}
+            layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -112,9 +105,9 @@ function Courses() {
             </button>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* Popup for Topics */}
+      {/* Popup for Selected Course */}
       {selectedCourse && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -124,20 +117,9 @@ function Courses() {
         >
           <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              {selectedCourse.title} Topics
+              {selectedCourse.title}
             </h2>
-            <ul className="text-gray-600 space-y-3">
-              <li>
-                <strong>Basic:</strong> {selectedCourse.topics.basic.join(", ")}
-              </li>
-              <li>
-                <strong>Intermediate:</strong>{" "}
-                {selectedCourse.topics.intermediate.join(", ")}
-              </li>
-              <li>
-                <strong>Advanced:</strong> {selectedCourse.topics.advanced.join(", ")}
-              </li>
-            </ul>
+            <p className="text-gray-600">{selectedCourse.description}</p>
             <button
               onClick={closePopup}
               className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -145,6 +127,18 @@ function Courses() {
               Close
             </button>
           </div>
+        </motion.div>
+      )}
+
+      {/* Empty State */}
+      {filteredCourses.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-gray-500 mt-8"
+        >
+          No courses found.
         </motion.div>
       )}
     </div>
